@@ -35,3 +35,14 @@ result = result.concat(arr);
 }
 return result;
 };
+
+interface Course {
+title:string;
+students:number;
+isPublished:boolean;
+}
+const getPopularCourse = (courses: Course[], studentsNum: number): Course[] => {
+  return courses.filter(
+    (course) => course.isPublished && course.students >= studentsNum
+  );
+};
