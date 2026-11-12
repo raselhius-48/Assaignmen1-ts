@@ -46,3 +46,31 @@ const getPopularCourse = (courses: Course[], studentsNum: number): Course[] => {
     (course) => course.isPublished && course.students >= studentsNum
   );
 };
+
+
+
+class Employee{
+protected name:string;
+private baseSalary : number;
+
+constructor (name:string, baseSalary:number){
+this.name=name,
+this.baseSalary=baseSalary,
+}
+
+ getDetailts ():string {
+return `Employee: ${this.name}, Base Salary: ${this.baseSalary}`
+}
+}
+
+class Manager extends Employee{
+depertment:string;
+constructor (name:string, baseSalary:number,depertment:string){
+super(name=name,baseSalary)
+this.depertment=depertment,
+}
+getRoleInfo (): string  {
+return `manager of: ${this.department}:${this.name}`
+};
+}
+
