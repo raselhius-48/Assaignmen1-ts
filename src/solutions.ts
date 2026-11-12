@@ -17,3 +17,21 @@ const processInput = (inputValue: Input): Output => {
   }
  
 };
+
+
+
+type CoordinateTuple =readonly[number,number,string]
+
+const formatCoordinate = (coord: CoordinateTuple): string => {
+const [latitude, longitude, locationName] = coord;
+return `Location: ${locationName} (${latitude}, ${longitude})`;
+};
+
+
+const concatenateArrays = <T>(...arrays: T[][]): T[] => {
+let result: T[] = [];
+for (const arr of arrays) {
+result = result.concat(arr);
+}
+return result;
+};
